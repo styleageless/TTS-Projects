@@ -1,11 +1,11 @@
 var email = { 
     name: 'Gmail',
     mailboxes: [ 
-        inbox=[],
-        starred=[],
-        sent=[],
-        drafts=[],
-        events=[]
+        {name:"inbox", emails:[]},
+        {name:"starred", emails:[]},
+        {name:"sent", emails:[]},
+        {name:"drafts", emails:[]},
+        {name:"events", emails:[]}
     ], 
 
     emailPreview: [
@@ -14,10 +14,10 @@ var email = {
         {name: 'Jen', lastMessage: "Let's do lunch!",status:'draft' },
 
     ]
-}
+};
 //Get a list of inbox names blah
 for(let i =0; i < email.mailboxes.length; i++){
-    console.log(email.mailboxes[i]);
+    console.log(email.mailboxes[i].name);
 }
 
 
@@ -35,8 +35,8 @@ for(let i=0; i<email.emailPreview.length; i++) {
     }
 }
 
-drafts.push(email.emailPreview[2]);
+email.mailboxes[3].emails.push(email.emailPreview[2]);
 
-console.log(drafts)
+console.log(email.mailboxes[3])
 
 
